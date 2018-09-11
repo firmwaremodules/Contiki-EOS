@@ -6,7 +6,7 @@ The prominent blockchain platform Ethereum suffers from two fundamental problems
 * Scalability. Limited to on the order of 10 transactions per second, the Ethereum global network is woefully inadequate for supporting IoT deployments of any sizeable quantity, even if they're sending messages infrequently.
 * Usability. Requiring each user (could be device) to spend a variable transaction fee (i.e. gas) to access network resources is counter-intuitive to some business models and imposes constraints on how dApps are architected.  Essentially the fundamental operation of your business is hostage to a global marketplace for Eth.
 
-EOS is a working blockchain platform that right now solves these problems.  EOS now supports over 1000 TX per second, and fundamentally alters the access model whereby users do not need to pay to use the system.  The business (e.g. IoT platform) pays (stakes tokens) to access blockchain resources. It is up to the business to decide how to monitize their services - and they can even be free.
+EOS is a working blockchain platform that right now solves these problems.  EOS now supports over 1000 TX per second, and fundamentally alters the access model whereby users do not need to pay to use the system.  The business (e.g. IoT platform) pays (stakes tokens) to access blockchain resources. It is up to the business to decide how to monetize their services - and they can even be free.
 
 ## Structure
 
