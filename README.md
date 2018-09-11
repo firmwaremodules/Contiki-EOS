@@ -17,7 +17,7 @@ The first thing we need to do is create wallet and install an EOS-compatible sig
 
 #### Wallet
 
-Many people think a cryptocurrency wallet stores their tokens. Contrary to popular belief, tokens are stored on the blockchain itself, visible to anyone and everyone.  So what's in the wallet?  Simply put, the wallet stores your ability to spend those tokens.  In EOS and other blockchains (like Bitcoin), this ability is provided by the "secret key".  In EOS specifically, the power to move and allocate tokens is given by having control of these three pieces of information:
+Many people think a cryptocurrency wallet stores their tokens. Contrary to popular belief, tokens are stored on the blockchain itself, visible to anyone and everyone.  So what's in the wallet?  Simply put, the wallet stores your ability to spend those tokens.  In EOS and other blockchains (like Bitcoin), this ability is provided by the "private key".  In EOS specifically, the power to move and allocate tokens is given by having control of these three pieces of information:
 * Private key
 * Corresponding public key
 * Corresponding account name
@@ -29,9 +29,9 @@ EOS and many other cryptosystems rely on ECDSA (Elliptic Curve Digital Signing A
 As said above the EOS transactions are signed using ECDSA techniques and the secp256k1 curve.  Contiki does not have a ready-to-go ECC engine for this purpose so we have to improvise.  A few options we can look at are as follows:
 * Hardware ECDSA (preferred)
 * Software ECDSA with TinyDTLS
-* Software ECDSA with a purpose built secp256r1 cryptolib like [this](https://github.com/bitcoin-core/secp256k1 )
+* Software ECDSA with a purpose built secp256r1 cryptolib like [this](https://github.com/bitcoin-core/secp256k1 ).
 
-The hardware engine would be the preferred solution.  For Contiki, there is the possibility of using the newly supported TI second-generation IoT MCU, the cc13x2/cc26x2's ECC engine.  Specifically these devices contain something called the Large Number Engine that performs the ECC calculations much more efficiently than the MCU core, and can do it in parallel to boot.  It is, however, geared towards BLE 5 and TI-RTOS and supports only the NIST curves (e.g. secp256r1) out of the box.  To this chips hardware ECC engine to sign EOS transactions, we'd have to add the secp256k1 curve parameters into the driver, and adapt the TI-RTOS driven state machine into the Contiki framework.
+The hardware engine would be the preferred solution.  For Contiki, there is the possibility of using the newly supported TI second-generation IoT MCU, the cc13x2/cc26x2's ECC engine.  Specifically these devices contain something called the Large Number Engine that performs the ECC calculations much more efficiently than the MCU core, and can do it in parallel to boot.  It is, however, geared towards BLE 5 and TI-RTOS and supports only the NIST curves (e.g. secp256r1) out of the box.  To use this chip's hardware ECC engine to sign EOS transactions, we'd have to add the secp256k1 curve parameters into the driver, and adapt the TI-RTOS driven state machine into the Contiki framework.
 
 TinyDTLS offer another approach.  TinyDTLS is already available for and works with Contiki-NG, and contains an ECDSA engine.  However, it too only supports the NIST curve secp256r1 (aka PRIME256).  Furthermore, the ECC engine appears to be optimized somewhat for this curve - and therefore some experimentation would be requried to find a way to adapt it to the secp256k1 curve needed for EOS transaction signing.
 
