@@ -20,7 +20,7 @@ Now, the local nodeos module won't look anything like that which exists today - 
 
 ### First Steps
 
-The first thing we need to do is create wallet and install an EOS-compatible signing engine into the Contiki framework.
+The first thing we need to do is create a wallet and install an EOS-compatible transaction signing engine into the Contiki framework.
 
 #### Wallet
 
@@ -36,7 +36,7 @@ EOS and many other cryptosystems rely on ECDSA (Elliptic Curve Digital Signing A
 As said above the EOS transactions are signed using ECDSA techniques and the secp256k1 curve.  Contiki does not have a ready-to-go ECC engine for this purpose so we have to improvise.  A few options we can look at are as follows:
 * Hardware ECDSA (preferred)
 * Software ECDSA with TinyDTLS
-* Software ECDSA with a purpose built secp256r1 cryptolib like [this](https://github.com/bitcoin-core/secp256k1 ).
+* Software ECDSA with a purpose built secp256k1 cryptolib like [this](https://github.com/bitcoin-core/secp256k1 ).
 
 The hardware engine would be the preferred solution.  For Contiki, there is the possibility of using the newly supported TI second-generation IoT MCU, the cc13x2/cc26x2's ECC engine.  Specifically these devices contain something called the Large Number Engine that performs the ECC calculations much more efficiently than the MCU core, and can do it in parallel to boot.  It is, however, geared towards BLE 5 and TI-RTOS and supports only the NIST curves (e.g. secp256r1) out of the box.  To use this chip's hardware ECC engine to sign EOS transactions, we'd have to add the secp256k1 curve parameters into the driver, and adapt the TI-RTOS driven state machine into the Contiki framework.
 
