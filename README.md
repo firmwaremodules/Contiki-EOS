@@ -2,11 +2,11 @@
 EOS blockchain communication module for Smart Contract Sensors powered by Contiki-NG OS.
 
 ## Why EOS
-The prominent blockchain platform Ethereum suffers from two fundamental problems that prevent it from ever being an option for building real distributed applications:
-* Scalability. Limited to less than 10 TX per second, the Ethereum global network is woefully inadequate.
-* Usability. Requiring each user to spend a variable transaction fee is not how real business platforms work. 
+The prominent blockchain platform Ethereum suffers from two fundamental problems that prevent it from being an option for building real distributed applications:
+* Scalability. Limited to on the order of 10 transactions per second, the Ethereum global network is woefully inadequate for supporting IoT deployments of any sizeable quantity, even if they're sending messages infrequently.
+* Usability. Requiring each user (could be device) to spend a variable transaction fee (i.e. gas) to access network resources is counter-intuitive to some business models and imposes constraints on how dApps are architected.  Essentially the fundamental operation of your business is hostage to a global marketplace for Eth.
 
-EOS is a working blockchain platform that right now fundamentally solves these problems.  EOS now supports over 1000 TX per second, and fundamentally alters the access model whereby users do not need to pay to use the system.  The business (e.g. IoT platform) pays (stakes tokens) to access blockchain resources. It is up to the business to decide how to monitize their services - and they can even be free.
+EOS is a working blockchain platform that right now solves these problems.  EOS now supports over 1000 TX per second, and fundamentally alters the access model whereby users do not need to pay to use the system.  The business (e.g. IoT platform) pays (stakes tokens) to access blockchain resources. It is up to the business to decide how to monitize their services - and they can even be free.
 
 ## Structure
 
