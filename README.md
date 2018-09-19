@@ -4,9 +4,11 @@ EOS blockchain communication module for Smart Contract Sensors powered by Contik
 ## Why EOS
 The prominent blockchain platform Ethereum suffers from two fundamental problems that prevent it from being an option for building real distributed applications:
 * Scalability. Limited to on the order of 10 transactions per second, the Ethereum global network is woefully inadequate for supporting IoT deployments of any sizeable quantity, even if they're sending messages infrequently.
-* Usability. Requiring each user (could be device) to spend a variable transaction fee (i.e. gas) to access network resources is counter-intuitive to some business models and imposes constraints on how dApps are architected.  Essentially the fundamental operation of your business is hostage to a global marketplace for Eth.
+* Usability. Requiring each user (could be device) to spend a variable transaction fee (i.e. gas) to access network resources is counter-intuitive to some business models and imposes constraints on how dApps are architected.  Essentially the fundamental operation of your business is hostage to a global marketplace for Eth.  I suppose one can make the same argument for EOS, however there is one clear distinction. With EOS, a business can claim (stake for) the resources it needs one time only (at launch for example), then operate the business without transaction costs.
 
 EOS is a working blockchain platform that right now solves these problems.  EOS now supports over 1000 TX per second, and fundamentally alters the access model whereby users do not need to pay to use the system.  The business (e.g. IoT platform) pays (stakes tokens) to access blockchain resources. It is up to the business to decide how to monetize their services - and they can even be free.
+
+I suppose I should say something about IOTA, after all, it has "IOT" in its name.  Well, there is no much to say really.  Burdening the battery-powered devices themselves with the responsibility for reaching global state consense hardly seems like the right way to allocate resources.  Plus, IOTA makes no sense.  Good luck with that.
 
 ## Structure
 
