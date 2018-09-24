@@ -1,5 +1,5 @@
 # Contiki-EOS
-EOS blockchain communication module for Smart Contract Sensors powered by Contiki-NG OS.
+EOS Blockchain communication module for our Smart Contract Sensor portfolio powered by Contiki-NG OS.
 
 ## Why EOS
 The prominent blockchain platform Ethereum suffers from two fundamental problems that prevent it from being an option for building real distributed applications:
@@ -43,5 +43,9 @@ As said above the EOS transactions are signed using ECDSA techniques and the sec
 The hardware engine would be the preferred solution.  For Contiki, there is the possibility of using the newly supported TI second-generation IoT MCU, the cc13x2/cc26x2's ECC engine.  Specifically these devices contain something called the Large Number Engine that performs the ECC calculations much more efficiently than the MCU core, and can do it in parallel to boot.  It is, however, geared towards BLE 5 and TI-RTOS and supports only the NIST curves (e.g. secp256r1) out of the box.  To use this chip's hardware ECC engine to sign EOS transactions, we'd have to add the secp256k1 curve parameters into the driver, and adapt the TI-RTOS driven state machine into the Contiki framework.
 
 TinyDTLS offer another approach.  TinyDTLS is already available for and works with Contiki-NG, and contains an ECDSA engine.  However, it too only supports the NIST curve secp256r1 (aka PRIME256).  Furthermore, the ECC engine appears to be optimized somewhat for this curve - and therefore some experimentation would be requried to find a way to adapt it to the secp256k1 curve needed for EOS transaction signing.
+
+#### EOS Transaction ABI
+
+EOS transactions are serialized JSON structures.  The serialization scheme is obtained from EOS library source code.
 
 
