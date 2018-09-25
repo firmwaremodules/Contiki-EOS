@@ -36,7 +36,10 @@
 #define __ECDSA_ENGINE_IMPL_H
 
 
-/* Get random number k for signing algorithm */
+/* Initialize engine. */
+void ecdsa_impl_init();
+
+/* Get random number k for signing algorithm .*/
 int ecdsa_impl_random(uint8_t k[32]);
 
 /* Get the SHA-256 hash of the message. */
@@ -49,6 +52,13 @@ int ecdsa_impl_hash(
 int ecdsa_impl_sign(
     const uint8_t priv_key[32],
     const uint8_t k[32],
+    const uint8_t hash[32],
+    uint8_t r[32],
+    uint8_t s[32]);
+
+/* Verify the ECDSA signature using the secp256k1 curve. */
+int ecdsa_impl_verify(
+    const uint8_t pub_key[64],
     const uint8_t hash[32],
     uint8_t r[32],
     uint8_t s[32]);

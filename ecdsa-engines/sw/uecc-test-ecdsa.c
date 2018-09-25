@@ -17,7 +17,7 @@
 
 
 static uint64_t g_rand = 88172645463325252ull;
-int fake_rng(uint8_t *p_dest, unsigned p_size)
+static int fake_rng(uint8_t *p_dest, unsigned p_size)
 {
     while(p_size)
     {
@@ -32,7 +32,7 @@ int fake_rng(uint8_t *p_dest, unsigned p_size)
     return 1;
 }
 
-#define NUM_ITER  32
+#define NUM_ITER  1
 
 static void print_hex(uint8_t* buf, int len) {
     for (int i = 0; i < len; i++) {

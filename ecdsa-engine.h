@@ -41,11 +41,17 @@ typedef struct
     uint8_t s[32];
 } ecdsa_signature_t;
 
+
+/**
+ * Invoke implementation initialization as necessary.
+ */
+void ecdsa_init();
+
 /**
  *  Create an ECDSA signature for the specified message given the
  *  device's private key.
  *
- *  @param(sig) [out] generated signature.
+ *  @param(sig) [out] generated message signature.
  *
  *  @return 0 - success
  */
@@ -54,6 +60,22 @@ int ecdsa_sign(
     const uint8_t* message,
     uint32_t len,
     ecdsa_signature_t* sig);
+
+/**
+ *  Verify an ECDSA signature for the specified message against the
+ *  sender's public key.
+ *
+ *  @param(sig) [in] message signature.
+ *
+ *  @return 0 - success
+ */
+int ecdsa_verify(
+    const uint8_t pub_key[64],
+    const uint8_t* message,
+    uint32_t len,
+    ecdsa_signature_t* sig);
+
+
 
 
 #endif // __ECDSA_ENGINE_H

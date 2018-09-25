@@ -38,6 +38,10 @@
 
 
 
+void ecdsa_init()
+{
+    ecdsa_impl_init();
+}
 
 int ecdsa_sign(
     const uint8_t priv_key[32],
@@ -54,11 +58,29 @@ int ecdsa_sign(
     /* Compute the message hash */
     ecdsa_impl_hash(message, len, hash);
 
-    /* Run the implemenation of the ECDSA algorithm */
+    /* Run the implementation of the ECDSA sign algorithm */
     ecdsa_impl_sign(priv_key, k, hash, sig->r, sig->s);
 
     return 0;
 
 }
 
+
+int ecdsa_verify(
+    const uint8_t pub_key[64],
+    const uint8_t* message,
+    uint32_t len,
+    ecdsa_signature_t* sig)
+{
+    uint8_t hash[32];
+
+    /* Compute the message hash */
+    ecdsa_impl_hash(message, len, hash);
+
+    /* Run the implementation of the ECDSA verify algorithm */
+    ecdsa_impl_verify(pub_key, hash, sig->r, sig->s);
+
+    return 0;
+
+}
 
