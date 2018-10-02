@@ -8,7 +8,7 @@ The prominent blockchain platform Ethereum suffers from two fundamental problems
 
 EOS is a working blockchain platform that right now solves these problems.  EOS now supports over 1000 TX per second, and fundamentally alters the access model whereby users do not need to pay to use the system.  The business (e.g. IoT platform) pays (stakes tokens) to access blockchain resources. It is up to the business to decide how to monetize their services - and they can even be free.
 
-I suppose I should say something about IOTA, after all, it has "IOT" in its name.  Well, there is no much to say really.  Burdening the battery-powered devices themselves with the responsibility for reaching global state consensus hardly seems like the right way to allocate resources.  Plus, blockchain for IoT is about security, and IOTA has gone off the rails there, making up their own security schemes.  Trust in a globally recognized and tried and true security scheme like blockchain's ECDSA (used in Bitcoin, Ethereum, EOS, countless others) is invaluable. RIP IOTA.
+I suppose I should say something about IOTA, after all, it has "IOT" in its name.  Well, there is not much to say really.  Burdening the battery-powered devices themselves with the responsibility for reaching global state consensus hardly seems like the right way to allocate resources.  Plus, blockchain for IoT is about security, and IOTA has gone off the rails there, making up their own security schemes.  Trust in a globally recognized and tried and true security scheme like blockchain's ECDSA (used in Bitcoin, Ethereum, EOS, countless others) is invaluable. RIP IOTA.
 
 ## Structure
 
