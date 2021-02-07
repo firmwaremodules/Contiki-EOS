@@ -1,4 +1,6 @@
-# Contiki-EOS
+# IT'S COMING.
+
+## Contiki-EOS
 EOS Blockchain communication module for our Smart Contract Sensor portfolio powered by Contiki-NG OS.
 
 ## Why EOS
