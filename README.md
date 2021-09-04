@@ -1,4 +1,10 @@
-# IT'S COMING.
+# IT'S HERE.
+
+The **Measurement Earth Operating System** developed by Firmware Modules Inc. runs on STM32L0 to generate signed authentic sensor data transactions for EOSIO blockchains.  It is custom-built from the ground up and has nothing to do with Contiki or -NG.
+
+See the system operating LIVE at https://www.measurement.earth
+
+Data is live, on-chain and around the world. 
 
 ## Contiki-EOS
 EOS Blockchain communication module for our Smart Contract Sensor portfolio powered by Contiki-NG OS.
